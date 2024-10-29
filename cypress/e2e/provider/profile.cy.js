@@ -128,7 +128,7 @@ describe("User Authentication Tests", () => {
       .should("be.visible")
       .and("contain", "The provided current password is incorrect.");
   });
-  it("hange password with mismatching new passwords", () => {
+  it("change password with mismatching new passwords", () => {
     cy.get(".navbar-nav.navbar-list").click();
     cy.get("#edit-profile").click();
     cy.wait(1000);

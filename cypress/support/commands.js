@@ -26,3 +26,6 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import 'cypress-file-upload';
+// npx cypress run --headless
+//npx cypress run --spec "cypress/integration/examples/*.spec.js"
+//npx cypress open
