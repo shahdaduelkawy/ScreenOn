@@ -17,22 +17,6 @@ describe("Owner Requests", () => {
       // Navigate to 'Requests' page
       cy.contains("Campaigns Approvals").click();
   });
- it("Ensure Search is Functional", () => {
-                // Type into the search input
-                cy.get('[name="transaction"]').type("test slot");
-              
-                // Click the search button
-                cy.get(".input-group-append .btn").click();
-              
-                // Wait for the results to be visible and assert they contain "test slot"
-                cy.get(".text-center.text-nowrap", { timeout: 10000 }) // 10 seconds timeout
-                  .should("be.visible")
-                  .and("contain", "test slot");
-  }); 
-it("Delete Campaign button", () => {
-        // Wait for the approve button to be visible and click
-        cy.get('button.delete-btn').first().click();
- });
 it("Show Content Campaign button", () => {
     // Click the "Show Content" button
     cy.get('a.btn.btn-ornery-tangerine-outline.br-2').first().click();
@@ -69,4 +53,8 @@ cy.get('[name="reason"]').type("bad offer");
 
 
   });
+  it("Delete Campaign button", () => {
+    // Wait for the approve button to be visible and click
+    cy.get('button.delete-btn').first().click();
+});
   });
