@@ -31,7 +31,7 @@ describe("Owner Requests", () => {
     .should("be.visible")
     .and("contain", "Available Screens");
 });
-it.only("Ensure Search for a screen using blank form", () => {
+it("Ensure Search for a screen using blank form", () => {
     cy.get('.col-md-7 > .nav > :nth-child(2) > .nav-link').click();
     cy.get('.my-3 > .btn').click();
 
