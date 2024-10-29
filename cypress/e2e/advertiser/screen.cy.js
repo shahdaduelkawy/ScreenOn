@@ -67,9 +67,9 @@ it("choose screen", () => {
     cy.get('#filter-btn').click();
     cy.get(':nth-child(1) > [data-col="4"]').click();
     cy.get('.px-4.py-3 > .px-4 > .mt-3').click();
-    cy.get('.border-ornery-tangerine > img').click();
+    cy.get('.border-ornery-tangerine > img').click({ multiple: true });
     cy.get('input[type="file"]').attachFile('red.png');
-    cy.get('form.image-container > .btn > .fas').click();
+    cy.get('form.image-container > .btn > .fas').click({ multiple: true });
     cy.get('.btn-ornery-tangerine').click();
     cy.get('.btn-ornery-tangerine').click();
 
