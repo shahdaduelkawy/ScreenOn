@@ -34,20 +34,20 @@
             
             // Add assertions if necessary
             cy.url().should('include', '/Owner/advertiser-requests'); // Verify if it navigates to the correct URL
-            cy.get('[name="query"]').type("adv");
+            cy.get('[name="query"]').type("testa");
         
             // Click the search button
             cy.get(".input-group-append .btn").click();
         
             cy.get(".text-center.text-nowrap", { timeout: 10000 }) // 10 seconds
             .should("be.visible")
-            .and("contain", "adv");
+            .and("contain", "testa");
           
           });
       
           it("Approves a request and checks the advertiser appears in Manage Advertiser page", () => {
             // Wait for the approve button to be visible and click
-            cy.get('button[wire\\:click="approve(9)"]', { timeout: 10000 })
+            cy.get(':nth-child(1) > :nth-child(7) > .gap-3 > :nth-child(1) > div > :nth-child(1)', { timeout: 10000 })
               .should('be.visible') // Wait for the button to appear
               .click(); // Click the approve button
           cy.wait(1000);
@@ -56,24 +56,24 @@
     
               cy.get(".text-center.text-nowrap", { timeout: 10000 }) // 10 seconds
               .should("be.visible")
-              .and("not.contain", "adv@gmail.com");
+              .and("not.contain", " testasvertiser@gmail.com");
               cy.wait(1000);
            // Navigate to 'Manage Advertisers' page
             cy.visit('https://dev.screenon.app/Owner/all-advertisers');
         
             // Check that the advertiser data appears in the Manage Advertisers page
-            cy.get('table').should('contain', 'adv@gmail.com');
+            cy.get('table').should('contain', ' testasvertiser@gmail.com');
           });
         
           it("Denies a request and checks the request is removed from the list", () => {
             // Wait for the deny button to be visible and click it
-            cy.get('button[wire\\:click="denied (17)"]', { timeout: 10000 })
+            cy.get(':nth-child(1) > :nth-child(7) > .gap-3 > :nth-child(1) > div > :nth-child(2)', { timeout: 10000 })
             .should('be.visible') // Wait for the button to appear
             .click(); // Click the approve button
           
      cy.get(".text-center.text-nowrap", { timeout: 10000 }) // 10 seconds
             .should("be.visible")
-            .and("not.contain", "advtest@gmail.com");
+            .and("not.contain", " testttt@gmail.com");
           
           });
           it("Approves a Denies request and checks the request is removed from the list", () => {
@@ -81,15 +81,15 @@
            
 
             cy.visit('https://dev.screenon.app/Owner/denied-advertisers');
-            cy.get('table').should('contain', 'advtest'); // Ensure the advertiser appears in the Denied Advertisers list
+            cy.get('table').should('contain', 'testttt'); // Ensure the advertiser appears in the Denied Advertisers list
 
-            cy.get('button[wire\\:click="approve(17)"]', { timeout: 10000 })
+            cy.get('.gap-3 > :nth-child(1)', { timeout: 10000 }).last()
             .should('be.visible') // Wait for the button to appear
             .click();
 
 
             // Check that the advertiser data appears in the Denied Advertisers page
-            cy.get('table').should('not.contain', 'Advertisertest@gmail.com'); // Ensure the advertiser appears in the Denied Advertisers list
+            cy.get('table').should('not.contain', 'testttt@gmail.com'); // Ensure the advertiser appears in the Denied Advertisers list
           });
           
         });

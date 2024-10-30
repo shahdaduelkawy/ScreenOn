@@ -23,7 +23,7 @@ describe("User Authentication Tests", () => {
       .type("Advertiser"); // Then types "Advertiser"
     cy.get('[name="email"]')
       .clear() // This clears the field
-      .type("advertiser@gmail.com"); // Then types "Advertiser"
+      .type("ScreenManger@gmail.com"); // Then types "Advertiser"
     cy.get('[name="phone"]')
       .clear() // This clears the field
       .type("01111111111"); // Then types "Advertiser"
@@ -92,7 +92,7 @@ describe("User Authentication Tests", () => {
 
     cy.get('[name="email"]')
       .clear() // This clears the field
-      .type("provider@gmail.com"); // Then types "Advertiser"
+      .type("Manager@gmail.com"); // Then types "Advertiser"
 
     cy.get('[name="country_id"]').select("Egypt"); //correct type
     cy.get("#submit-editing").click();
@@ -107,7 +107,7 @@ describe("User Authentication Tests", () => {
     cy.get("#edit-profile").click();
     cy.wait(1000);
     cy.get("#change-password").click();
-    cy.get('[name="current_password"]').type("shahd123");
+    cy.get('[name="current_password"]').type("12345678");
     cy.get('[name="password"]').type("12345678");
     cy.get('[name="password_confirmation"]').type("12345678");
     cy.get("#confirm-password").click();

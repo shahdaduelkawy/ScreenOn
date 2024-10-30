@@ -74,12 +74,6 @@ cy.get(".table-responsive", { timeout: 10000 }) // 10 seconds timeout
         .should("be.visible")
         .and("contain", "C");
     });
-    it('delete Audience', () => {
-        // Step 1: Navigate to the Show Attribute Page
-        cy.visit('https://dev.screenon.app/Owner/attributes/show/1');
-        cy.get('.fa-trash').last().click();
-
-    });
     it('add Audience', () => {
         // Step 1: Navigate to the Show Attribute Page
         cy.visit('https://dev.screenon.app/Owner/attributes/show/1');
@@ -90,6 +84,11 @@ cy.get(".table-responsive", { timeout: 10000 }) // 10 seconds timeout
         .should("be.visible")
         .and("contain", "test");
     });
+    it('delete Audience', () => {
+      // Step 1: Navigate to the Show Attribute Page
+      cy.visit('https://dev.screenon.app/Owner/attributes/show/1');
+      cy.get('.fa-trash').last().click();
+  });
     it('add attribute', () => {
         cy.get('[type="button"]').first().click();
         cy.get('#attribute_name').type("test");
@@ -105,7 +104,7 @@ cy.get(".table-responsive", { timeout: 10000 }) // 10 seconds timeout
 
     });
     it('delete attribute', () => {
-        cy.get('[type="submit"]').last().click({ force: true });
+      cy.get(':nth-child(1) > .actions > form > button > img').first().click({ force: true });
     });
     
 

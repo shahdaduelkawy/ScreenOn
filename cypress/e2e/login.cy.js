@@ -8,7 +8,7 @@ it("login successfuly", () => {
 
   // Click the first matching landing-nav-btn
   cy.get(".landing-nav-btn:last").click();
-  cy.fixture('ValidProvider').then(user => {
+  cy.fixture('ValidOwner').then(user => {
     cy.get("#email").type(user.email); // Correct email
     cy.get("#password").type(user.password); // Correct password
   })
@@ -25,7 +25,7 @@ it("Error message is thrown after Hiting Login Button", () => {
   cy.visit("https://dev.screenon.app/");
   cy.get(".landing-nav-btn:last").click();
 
-  cy.get("#email").type("provider@gmail.com"); //incorrect email
+  cy.get("#email").type("providerss@gmail.com"); //incorrect email
   cy.get("#password").type("1234567"); //incorrect password
   cy.get('[type="submit"]').click();
   cy.get(".invalid-feedback", { timeout: 10000 })
@@ -41,7 +41,7 @@ it("Verify that user logs out if token expires ", () => {
   cy.visit("https://dev.screenon.app/");
   cy.get(".landing-nav-btn:last").click();
 
-  cy.fixture('ValidProvider').then(user => {
+  cy.fixture('ValidOwner').then(user => {
     cy.get("#email").type(user.email); // Correct email
     cy.get("#password").type(user.password); // Correct password
   })

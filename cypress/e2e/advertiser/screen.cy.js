@@ -65,7 +65,8 @@ it("choose screen", () => {
     cy.get('#date_to').type("2024-11-11");
     cy.get('#chosen-hour').type("02:00");
     cy.get('#filter-btn').click();
-    cy.get(':nth-child(1) > [data-col="4"]').click();
+    cy.get(':nth-child(3) > [data-col="4"]').click();
+    cy.get(':nth-child(6) > [data-col="5"]')
     cy.get('.px-4.py-3 > .px-4 > .mt-3').click();
     cy.get('.border-ornery-tangerine > img').click({ multiple: true });
     cy.get('input[type="file"]').attachFile('red.png');

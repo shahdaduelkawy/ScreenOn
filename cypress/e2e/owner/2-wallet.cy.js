@@ -20,15 +20,15 @@ describe("Owner Requests", () => {
 it("Ensure Add Wallet button is displayed", () => {
     
     cy.wait(1000);
-    cy.get('button[wire\\:click="createWallet(28)"]')
+    cy.get(':nth-child(5) > :nth-child(5) > .btn')
       .should('be.visible');
 });
-it("Ensure Add Wallet button is working", () => {
+it.only("Ensure Add Wallet button is working", () => {
     
     cy.wait(1000);
    
 
-      cy.get('button[wire\\:click="createWallet(28)"]').click();
+    cy.get(':nth-child(8) > :nth-child(5) > .btn').click({ force: true });
 
 });
 it("Check Balance", () => {

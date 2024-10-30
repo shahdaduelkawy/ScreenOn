@@ -49,7 +49,7 @@ it("Ensure Search with invalid word is Functional", () => {
 });
 it("add a new location successfully", () => {
     cy.get('.content-header > .d-flex > .btn').click(); 
-    cy.get('#title').type("cairo university 20");
+    cy.get('#title').type("cairo university 202");
     cy.get('#search-box').type("cairo university{enter}"); // Press Enter after typing
     cy.get('#selectedCategory').select("Education");
     cy.get('#selectedType').select("University");
@@ -62,7 +62,7 @@ it("add a new location successfully", () => {
 });
 it("add a new location with a duplicate location name", () => {
     cy.get('.content-header > .d-flex > .btn').click(); 
-    cy.get('#title').type("cairo university 20");
+    cy.get('#title').type("cairo university 202");
     cy.get('#search-box').type("cairo university{enter}"); // Press Enter after typing
     cy.get('#selectedCategory').select("Education");
     cy.get('#selectedType').select("University");
